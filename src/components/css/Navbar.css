@@ -1,0 +1,117 @@
+/* src/components/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    position: relative;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .brand-and-toggler {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .navbar-brand-icon {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 0.5rem;
+  }
+  
+  .navbar-brand-text {
+    font-size: 1rem; /* Adjust size as needed */
+    font-weight: bold;
+  }
+  
+  .text-build {
+    color: black; /* Black color for "build" text */
+    margin-right: 0.5rem; /* Adjust spacing as needed */
+  }
+  
+  .text-resume {
+    color: blue; /* Blue color for "resume" text */
+  }
+  
+  .navbar-toggler {
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Ensure it's large enough to be visible */
+    cursor: pointer;
+    color: blue; /* Blue color for hamburger menu */
+    margin-left: auto; /* Push the toggler to the right */
+  }
+  
+  .navbar-menu {
+    position: absolute;
+    top: 100%; /* Aligns the menu directly below the navbar-content */
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 200px; /* Adjust width as needed */
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+  
+  .navbar-menu.open {
+    display: block; /* Show the menu when toggled */
+  }
+  
+  .navbar-menu ul {
+    list-style-type: decimal;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .navbar-menu ul {
+    margin: 0.5rem 0;
+  }
+  
+  .navbar-menu a {
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem 0;
+    display: block;
+  }
+  
+  .navbar-menu a:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-toggler {
+      display: block; /* Show the toggler on smaller screens */
+    }
+  
+    .navbar-menu {
+      top: 50px; /* Adjust to ensure it's just below the navbar-toggler */
+      right: 0; /* Aligns it with the right edge of the screen */
+      width: 200px; /* Keep it compact on mobile */
+      left: auto; /* Ensure it aligns to the right */
+    }
+  }
+  
