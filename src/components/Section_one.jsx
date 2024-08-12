@@ -16,7 +16,7 @@ const ComponentName = () => {
                 <br/>
                 <p>Getting that dream job can seem like an impossible task. We're here to change that. Give yourself a real advantage with the best online resume maker: created by experts, imporved by data, trusted by millions of professionals.</p>
                 <div className="btn-group">
-                    <button className="btn btn-primary">CREATE MY RESUME</button>
+                    <button className="btn btn-primary">CREATE NEW RESUME</button>
                     <button className="btn btn-secondary">WATCH VIDEO</button>
                 </div>
             </div>
