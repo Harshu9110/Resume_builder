@@ -1,8 +1,8 @@
-# React + Vite
+# Resume Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project provides user the ATS friendly templates of the resume and give user the freedom to make their resume according to their specifications.
 
-Currently, two official plugins are available:
+Currently, Working on the projects components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- Tools & Technologies : Reactjs Using vite , CSS
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
