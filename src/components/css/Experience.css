@@ -23,4 +23,33 @@
         margin: 4px 6px;
         /* Align to the right */
   }
+  .cv-form-blk {
+    position: relative;
+    overflow: hidden; /* Ensures that child elements are clipped to the container */
+  }
+  
+  .date-picker-container {
+    position: relative;
+  }
+  
+  .date-picker-container .form-control {
+    width: 100%;
+    padding-right: 2rem; /* Adjust the padding-right to make space for the icon */
+  }
+  
+  .calendar-icon {
+    position: relative;
+    left: 90px;
+    bottom: 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #3d3737de;
+     /* Adjust the size as needed */
+    cursor: pointer; /* Show pointer cursor to indicate interactivity */
+  }
+  
+  .calendar-container {
+    position: relative;
+    z-index: 10;
+  }
   

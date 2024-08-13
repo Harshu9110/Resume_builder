@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import { FaCalendarAlt } from 'react-icons/fa';
+import 'react-datepicker/dist/react-datepicker.css';
 import '../components/css/Experience.css';
 
 export default function Experience() {
-  const [experiences, setExperiences] = useState([{ id: Date.now() }]);
+  const [experiences, setExperiences] = useState([{ id: Date.now(), startDate: null, endDate: null }]);
 
   const handleAddExperience = () => {
-    setExperiences([...experiences, { id: Date.now() }]);
+    setExperiences([...experiences, { id: Date.now(), startDate: null, endDate: null }]);
   };
 
   const handleRemoveExperience = (id) => {
     setExperiences(experiences.filter(exp => exp.id !== id));
   };
+
+  const handleDateChange = (date, id, field) => {
+    setExperiences(experiences.map(exp => exp.id === id ? { ...exp, [field]: date } : exp));
+  };
+
+  const popperContainer = ({ children }) => (
+    <div className="calendar-container">
+      {children}
+    </div>
+  );
 
   return (
     <>
@@ -53,21 +66,39 @@ export default function Experience() {
               <div className="cols-3">
                 <div className="form-elem">
                   <label htmlFor="" className="form-label">Start Date</label>
-                  <input
-                    name={`exp_start_date_${exp.id}`}
-                    type="date"
-                    className="form-control exp_start_date"
-                  />
-                  <span className="form-text" />
+                  <div className="date-picker-container">
+                    <DatePicker
+                      selected={exp.startDate}
+                      onChange={(date) => handleDateChange(date, exp.id, 'startDate')}
+                      dateFormat="dd-MM-yy"
+                      className="form-control exp_start_date"
+                      placeholderText="dd-mm-yy"
+                      popperContainer={popperContainer}
+                    />
+                    <FaCalendarAlt
+                      className="calendar-icon"
+                      onClick={(e) => e.stopPropagation()}
+                      onMouseDown={(e) => e.preventDefault()}
+                    />
+                  </div>
                 </div>
                 <div className="form-elem">
                   <label htmlFor="" className="form-label">End Date</label>
-                  <input
-                    name={`exp_end_date_${exp.id}`}
-                    type="date"
-                    className="form-control exp_end_date"
-                  />
-                  <span className="form-text" />
+                  <div className="date-picker-container">
+                    <DatePicker
+                      selected={exp.endDate}
+                      onChange={(date) => handleDateChange(date, exp.id, 'endDate')}
+                      dateFormat="dd-MM-yy"
+                      className="form-control exp_end_date"
+                      placeholderText="dd-mm-yy"
+                      popperContainer={popperContainer}
+                    />
+                    <FaCalendarAlt
+                      className="calendar-icon"
+                      onClick={(e) => e.stopPropagation()}
+                      onMouseDown={(e) => e.preventDefault()}
+                    />
+                  </div>
                 </div>
                 <div className="form-elem">
                   <label htmlFor="" className="form-label">Description</label>
